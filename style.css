@@ -6,7 +6,7 @@
 
 html{
     font-size: 14px;
-    font-family: ;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: white;
     color: white;
 }
@@ -49,4 +49,67 @@ h1{
     margin: 4px;
     border-radius: 5px;
     background-color: rgb(4, 31, 59)
+}
+
+.subforum.descripition *{
+    margin-block: 0;
+}
+
+.devider{
+    display: block;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to left, rgb(10, 13, 199), rgb(206, 93, 0));
+}
+
+/*header*/
+
+header{
+    margin-inline: 10px;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+}
+
+.navigation{
+    background-color: rgb(10, 13, 199);
+    padding: 10px;
+    width: 65%;
+    display: inline-block;
+    border-radius: 5px;
+    max-height: 80px;
+    margin-right: 10px;
+}
+
+.nav-list{
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.nav-item a{
+    float: right;
+    display: block;
+    text-align: center;
+    margin-inline: 20px;
+    font-size: 20px;
+    padding: 10px;
+    color: white;
+}
+
+
+.nav-item a:hover{
+    background-color: rgb(255, 98, 41);
+}
+
+.close-icon i{
+    font-size: 60px;
+    float: left;
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
+
 }
