@@ -12,22 +12,12 @@
 <body>
     <header>
         <div class="navbar">
-            <nav class="navigation hide">
-                <ul class="nav-list">
-                    <span class="close-icon" onclick="showIconBar()"><i class="fa fa-close"></i></span>
-                    <li class="nav-item">
-                        <a href="#">home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Forum</a>
-                    </li>
-                </ul>
-            </nav>
-            <a href="#" class="bar-icon" id="iconBar" onclick="hideIconBar()"><i class="fa fa-bars"></i></a>
-            <div class="brand">iforum</div>
-            <div class="search-box">
-                <input type="text" name="" id="" placeholder="pesquisar">
-                <button><i class="fa fa-search"></i></button>
+            <div class="navbar-content">
+                <div class="navbar-col" id="brand">iforum</div>
+                <div class="navbar-col" id="search-box">
+                    <input type="text" name="" id="" class="search-bar"placeholder="pesquisar">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
             </div>
         </div>
     </header>
