@@ -10,6 +10,6 @@ const commentSchema = mongoose.Schema({
 
 
 // Definindo a collection
-const comment = mongoose.model('comment', subjectSchema);
+const comment = mongoose.model('comment', commentSchema);
 
 module.exports = {comment};
