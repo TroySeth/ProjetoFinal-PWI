@@ -1,7 +1,7 @@
 function hideIconBar(){
     var iconBar = document.getElementById("iconBar");
     var navigation = document.getElementById("navigation");
-    iconBar.setAttribute("style","display:none;");
+    iconBar.setAttribute("style", "display:none;");
     navigation.classList.remove("hide");
 }
 

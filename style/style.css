@@ -90,10 +90,10 @@ header{
 }
 
 .nav-item a{
-    float: right;
-    display: block;
+    float: left;
+    display: inline;
     text-align: center;
-    margin-inline: 20px;
+    margin-inline: 13px;
     font-size: 20px;
     padding: 10px;
     color: white;
@@ -135,4 +135,34 @@ header{
     font-size: 60px;
     display: inline-block;
     color: rgb(10, 13, 199);
+}
+
+.search-box{
+    border-radius: 20px;
+    border: solid 1px rgb(255, 98, 41);
+    margin-top: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 2px 3px rgb(255, 98, 41);
+}
+
+.search-box select{
+    padding: 10px;
+}
+
+.search-box input{
+    padding: 10px;
+}
+
+.search-box button{
+    padding: 10px;
+    background-color: white;
+    color: black;
+}
+
+.search-box button:hover{
+    background-color: black;
+    color:white;
+    box-shadow: 1px 2px 3px white;
 }
