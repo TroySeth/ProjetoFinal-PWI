@@ -20,7 +20,7 @@ async function create (req, res){
 // Função de pegar todos os assuntos do fórum no banco
 async function findAll (req, res){
     const subjectAll = await subjectModel.find()
-    res.send(subjectAll)
+    res.json(subjectAll)
 };
 
 async function editSubject (req, res){

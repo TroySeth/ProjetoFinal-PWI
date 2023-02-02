@@ -9,7 +9,7 @@ app.use(express.static(__dirname));
 db.Connect();
 
 const routes = require('./routes/routes')
-app.use('/', routes);
+app.use(routes);
 
 app.listen(3000, () => {
     console.log("App running on port 3000");
