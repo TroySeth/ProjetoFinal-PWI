@@ -162,6 +162,7 @@ header .navbar{
 }
 
 
+
 #brand{
     font-family: kento;
     font-size: 40px;
@@ -191,6 +192,7 @@ header .navbar{
 
 #search-box input{
     padding: 10px;
+    margin-left: 10px;
 }
 
 #search-box input:hover{
@@ -203,6 +205,11 @@ header .navbar{
     color: rgb(255, 98, 41); ;
     border-style: none;
     border-radius: 0px 20px 20px 0px;
+}
+
+#search-box .add-forum{
+    width: 10%;
+    border-radius: 20px;
 }
 
 #search-box button:hover{
