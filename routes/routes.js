@@ -1,11 +1,18 @@
 const router = require('express').Router();
 
-const subjectController = require('../controllers/subjectController')
+const postController = require('../controllers/postController')
+const commentController = require('../controllers/commentController')
 
-// Routes
-router.route('/buscar').get((req, res) => subjectController.findAll(req, res));
-router.route('/').post((req, res) => subjectController.create(req, res));
-router.route('/update').put((req, res) => subjectController.editSubject(req , res));
-router.route('/delete').delete((req, res) => subjectController.destroySubject(req, res));
+// Routes do post
+router.route('/posts').get((req, res) => postController.findAll(req, res));
+router.route('/').post((req, res) => postController.create(req, res));
+router.route('/update').put((req, res) => postController.editPost(req , res));
+router.route('/delete').delete((req, res) => postController.destroyPost(req, res));
+
+// Routes do comment
+router.route('/comments').get((req, res) => commentController.findAll(req, res));
+router.route('/').post((req, res) => commentController.create(req, res));
+router.route('/updateComment').put((req, res) => commentController.editComment(req , res));
+router.route('/deleteComment').delete((req, res) => commentController.destroyComment(req, res));
 
 module.exports = router;

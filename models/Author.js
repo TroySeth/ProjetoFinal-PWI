@@ -3,10 +3,10 @@ const {Schema} = mongoose;
 const date = new Date();
 
 // Definindo o model das notas
-const subjectSchema = mongoose.Schema({
-    title: String,
-    content: String,
-    date: {type: Date, default: date},
+const authorSchema = mongoose.Schema({
+    name: String,
+    user: String,
+    email: String,
 });
 
 /*noteSchema.index(
@@ -14,6 +14,6 @@ const subjectSchema = mongoose.Schema({
 )*/
 
 // Definindo a collection
-const subject = mongoose.model('subject', subjectSchema);
+const author = mongoose.model('author', authorSchema);
 
-module.exports = {subject};
+module.exports = {author};
