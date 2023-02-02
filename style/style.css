@@ -157,8 +157,8 @@ header .navbar{
 
 
 @font-face {
-    font-family: kento;
-    src: url(./Kento\ Regular.otf);
+    font-family: Brains Courage;
+    src: url(./Brainscouragedemo-K7D6D.otf);
 }
 
 
@@ -208,4 +208,94 @@ header .navbar{
 #search-box button:hover{
     background-color: rgb(255, 98, 41);;
     color:white;
+}
+
+
+/*==========post.html==========*/
+
+
+.table-head{
+    display: flex;
+}
+
+.table-head div{
+    padding: 5px;
+    margin: 2px;
+    background-color: black;
+    font-weight: bold;
+}
+
+.table-head .status{
+    flex: 5%;
+}
+
+.table-head .subjects{
+    flex: 70%;
+}
+
+.table-head .replies{
+    flex: 10%;
+}
+
+.table-head .last-reply{
+    flex: 5%;
+}
+
+/*==========login.html==========*/
+
+
+.container-login{
+    width: 25%;
+    height: 420px;
+    background-color: rgb(6, 42, 80);
+    border-radius: 20px;
+    position:absolute;
+	left:35%;
+    top:10%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-login .user-icon{
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 2px 3px rgb(255, 98, 41);
+    border-radius: 100px;
+    margin-top: 15px;
+}
+
+.container-login .brand{
+    display: flex;
+    justify-content: center;
+    font-family: Brains Courage;
+    font-size: 45px;
+}
+
+.bottom-side{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.item-login{
+    margin-top: 20px;
+}
+
+.input{
+    
+    height:30%;
+    width: 90%;
+    border-radius: 3px;
+    border-style: none;
+}
+
+.button-login{
+    width: 40%;
+    height: 25px;
+    border-radius: 20px;
+    border-style: none;
 }
