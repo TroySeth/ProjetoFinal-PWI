@@ -157,13 +157,14 @@ header .navbar{
 
 
 @font-face {
-    font-family: kento;
-    src: url(./Kento\ Regular.otf);
+    font-family: Thorsley;
+    src: url(./Thorsley-9YBXn.otf);
 }
 
 
+
 #brand{
-    font-family: kento;
+    font-family: Thorsley;
     font-size: 40px;
     display: inline-block;
     color: white;
@@ -191,6 +192,7 @@ header .navbar{
 
 #search-box input{
     padding: 10px;
+    margin-left: 10px;
 }
 
 #search-box input:hover{
@@ -205,7 +207,155 @@ header .navbar{
     border-radius: 0px 20px 20px 0px;
 }
 
+#search-box .add-forum{
+    width: 10%;
+    border-radius: 20px;
+    color: rgb(255, 98, 41); ;
+
+}
+
 #search-box button:hover{
     background-color: rgb(255, 98, 41);;
     color:white;
+}
+
+
+/*==========post.html==========*/
+
+
+.table-head{
+    display: flex;
+}
+
+.table-head div{
+    padding: 5px;
+    margin: 2px;
+    background-color: black;
+    font-weight: bold;
+}
+
+.table-head .status{
+    flex: 5%;
+}
+
+.table-head .subjects{
+    flex: 70%;
+}
+
+.table-head .replies{
+    flex: 10%;
+}
+
+.table-head .last-reply{
+    flex: 5%;
+}
+
+/*==========login.html==========*/
+
+
+.container-login{
+    width: 25%;
+    height: 420px;
+    background-color: rgb(6, 42, 80);
+    border-radius: 20px;
+    position:absolute;
+	left:35%;
+    top:10%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-login .user-icon{
+    
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 2px 3px rgb(255, 98, 41);
+    border-radius: 100px;
+    margin-top: 15px;
+}
+
+.container-login .brand{
+    display: flex;
+    justify-content: center;
+    font-family: Thorsley;
+    font-size: 45px;
+}
+
+.bottom-side{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.item-login{
+    margin-top: 20px;
+}
+
+.input{
+    
+    height:30%;
+    width: 90%;
+    border-radius: 3px;
+    border-style: none;
+}
+
+.button-login{
+    width: 40%;
+    height: 25px;
+    border-radius: 20px;
+    border-style: none;
+}
+
+
+/*======Post.html=======*/
+
+.container-post{
+    width: 35%;
+    height: 420px;
+    background-color: rgb(6, 42, 80);
+    border-radius: 20px;
+    position:absolute;
+    margin-top: 40px;
+	left:35%;
+    top:10%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.items-post{
+    display: grid;
+}
+
+.container-post .items{
+    margin-top: 13px;
+    display: grid;
+    width: 300px;
+    height: 70px;
+    border-radius: 20px;
+    border-style: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-template-columns: 100%;
+}
+
+.bttn-post{
+    display: block;
+    
+}
+
+.items-post .button-post{
+    width: 120px;
+    height: 40px;
+    display: block;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to left, rgb(255, 123, 0), rgb(10, 13, 199));
+    color: white;
 }

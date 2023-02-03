@@ -11,3 +11,7 @@ function showIconBar(){
     iconBar.setAttribute("style","display:block;");
     navigation.classList.add("hide");
 }
+
+function addForum(){
+    
+}

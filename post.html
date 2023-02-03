@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript" src="main.js"></script>
+    <title>iforum</title>
+</head>
+<body>
+    <!--cabeçalho-->
+    <header class="header">
+        <div class="navbar">
+            <div class="navbar-content">
+                <div class="navbar-col" id="brand">iforum</div>
+                <div class="navbar-col" id="search-box">
+                    <input type="text" name="" id="" class="search-bar"placeholder="pesquisar">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--post-->
+    <!--container-->
+    <div class = "container-post">
+        <form class="items-post items post" action="/post" method="POST">
+                <input name="title" class="items input-title" placeholder="Título">
+                <input name="content" class="items input content" placeholder="Conteúdo">
+                <div class="bttn-post">
+                    <button class="items button-post">publicar<i class="fa fa-check"></i></button>
+                </div>
+        </form>
+    </div>
+</body>
+</html>

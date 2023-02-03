@@ -10,11 +10,13 @@
     <title>iforum</title>
 </head>
 <body>
-    <header>
+    <!--cabeçalho-->
+    <header class="header">
         <div class="navbar">
             <div class="navbar-content">
                 <div class="navbar-col" id="brand">iforum</div>
                 <div class="navbar-col" id="search-box">
+                    <button class="add-forum" onclick="addForum()"><i class="fa fa-plus"></i></button>
                     <input type="text" name="" id="" class="search-bar"placeholder="pesquisar">
                     <button><i class="fa fa-search"></i></button>
                 </div>
@@ -22,6 +24,7 @@
         </div>
     </header>
     <!--post-->
+    <!--container-->
     <div class = "container">
         <div class = "subforum">
             <div class="title">
@@ -45,7 +48,7 @@
                 on 31/01/2023
             </div>
         </div>
-        <!--more post-->
+        <!--outro post-->
         <div class = "subforum">
             <div class="title">
                 <h1>informação geral</h1>
@@ -68,7 +71,7 @@
                 on 31/01/2023
             </div>
         </div>
-        <!--more post-->
+        <!--outro post-->
         <div class = "subforum">
             <div class="title">
                 <h1>informação geral</h1>
@@ -92,7 +95,7 @@
             </div>
         </div>
         <hr class="devider">
-        <!--post with more answer-->
+        <!--topicos com respostas-->
         <div class = "subforum-row ">
             <div class = "subforum-icon subforum-column">
                 <i class="fa fa-car"></i>
