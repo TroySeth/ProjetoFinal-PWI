@@ -8,7 +8,6 @@ async function create (req, res){
             name: req.body.name,
             user: req.body.user,
             email: req.body.email,
-            password: req.body.password
         }).save();
         setTimeout(function() {
             res.status(201).json('subject criado')
