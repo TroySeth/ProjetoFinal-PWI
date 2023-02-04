@@ -28,7 +28,7 @@ h1{
     background-color: rgb(6, 42, 80);
     border-radius: 10px;
     text-align: center;
-    display:grid;
+    display:block;
     justify-content:space-around;
     
 
@@ -313,6 +313,12 @@ header .navbar{
 
 .item-login{
     margin-top: 20px;
+    height:30%;
+    width: 90%;
+    border-radius: 3px;
+    border-style: none;
+    justify-content: center;
+    display: block;
 }
 
 .input{
