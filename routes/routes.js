@@ -26,7 +26,7 @@ router.route('/deleteComment').delete((req, res) => commentController.destroyCom
 router.route('/register').get((req, res) => res.sendFile(path.join(__dirname + '../../registro.html')));
 router.route('/register').post((req, res) => userController.create(req, res));
 router.route('/login').get((req, res) => res.sendFile(path.join(__dirname + '../../login.html')))
-router.route('/login').post((req, res) => userController.login)
+router.route('/login').post((req, res) => userController.login(req, res))
 router.route('/perfil').get((req, res) => res.sendFile(path.join(__dirname + '../../perfil.html')))
 
 module.exports = router;

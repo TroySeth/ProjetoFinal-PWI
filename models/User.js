@@ -5,9 +5,9 @@ const date = new Date();
 // Definindo o model das notas
 const userSchema = mongoose.Schema({
     name: String,
-    user: String,
+    username: String,
     email: String,
-    photo: Buffer,
+    password: String,
     point: Number
 });
 
