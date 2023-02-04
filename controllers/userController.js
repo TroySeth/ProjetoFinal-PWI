@@ -8,6 +8,7 @@ async function create (req, res){
             name: req.body.name,
             user: req.body.user,
             email: req.body.email,
+            password: req.body.password
         }).save();
         setTimeout(function() {
             res.status(201).json('subject criado')
@@ -17,4 +18,13 @@ async function create (req, res){
     }
 };
 
-module.exports = {create}
+async function login (req, res){
+    try{
+        await userModel.findOne({user: req.body.user})
+        res.status(201).json('usuario entrou')
+    } catch(error){
+        console.log('usuário não cadastrado')
+    }
+}
+
+module.exports = {create, login}
