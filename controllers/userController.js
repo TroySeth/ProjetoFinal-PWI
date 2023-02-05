@@ -3,6 +3,16 @@ const db = require('../db/db')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
+// Making random marker
+async function getMarker(){
+    marker = Math.floor(Math.random() * 10000000000);
+    const markerExists = await userModel.findOne({marker: marker});
+    if(markerExists){
+        getMarker();
+    }
+    return marker;
+}
+
 // Função de criar user
 async function create (req, res){
     
@@ -18,6 +28,8 @@ async function create (req, res){
         return res.status(422).json('usuário já existe, tente outro usuário')
     }
 
+    getMarker();
+
     const salt = await bcrypt.genSalt(12)
     const passwordHash = await bcrypt.hash(password, salt)
 
@@ -26,7 +38,8 @@ async function create (req, res){
             name,
             username,
             email,
-            password: passwordHash
+            password: passwordHash,
+            marker: marker,
         }).save().then(res.redirect('/signin'));
     } catch(error){
         console.log('Erro ao criar usuário:' + error);

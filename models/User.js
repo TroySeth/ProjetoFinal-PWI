@@ -8,7 +8,7 @@ const userSchema = mongoose.Schema({
     username: String,
     email: String,
     password: String,
-    point: Number
+    marker: Number
 });
 
 /*noteSchema.index(
