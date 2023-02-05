@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
 const db = require('./db/db');
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+const cookieParser = require('cookie-parser')
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 app.use(express.static(__dirname));
+app.use(cookieParser())
 
 db.Connect();
 

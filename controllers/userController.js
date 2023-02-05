@@ -80,11 +80,10 @@ async function signout(req, res){
 async function isAuthenticated (req, res, next){
     const { access_token } = req.cookies;
     const msg = 'Você precisa se autenticar para acessar essa página.';
-  
     if (access_token) {
-      try {
+        try {
         const [, token] = access_token.split(' ');
-        await jwt.verify(token, process.env.SECRET_KEY);
+        await jwt.verify(token, process.env.SECRET);
   
         return next();
       } catch (e) {
