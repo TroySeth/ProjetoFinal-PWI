@@ -8,10 +8,7 @@ async function create (req, res){
             title: req.body.title,
             content: req.body.content,
             date: postModel.date,
-        }).save();
-        setTimeout(function() {
-            res.status(201).json('subject criado')
-        }, 2000);
+        }).save().then(res.status(201).json('subject criado'));
     } catch(error){
         console.log('Erro ao criar assunto:' + error);
     }
@@ -25,21 +22,16 @@ async function findAll (req, res){
 
 async function editPost (req, res){
     try{
-        await postModel.updateOne({_id: req.body.id},{title: req.body.title, content: req.body.content});
-        setTimeout(function() {
-            res.status(201).json('post do ID: ' + req.body.id + ' foi modificado')
-            }, 1000);
+        await postModel.updateOne({_id: req.body.id},{title: req.body.title, content: req.body.content}
+        ).then(res.status(201).json('post do ID: ' + req.body.id + ' foi modificado'));
     } catch(error){
         console.log('Falha ao editar a postagem: ' + error)
     }
 };
 
 async function destroyPost (req, res){
-    await postModel.deleteOne({_id: req.body.id}).then(() => {
-        setTimeout(function() {
-            res.status(200).json('post do ID: ' + req.body.id + ' foi deletado')
-        }, 500);
-    }).catch((error) => {
+    await postModel.deleteOne({_id: req.body.id}).then(res.status(200).json('post do ID: ' + req.body.id + ' foi deletado')
+    ).catch((error) => {
         console.log('Erro ao deletar a postagem.' + error);
     })
 };

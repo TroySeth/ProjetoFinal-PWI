@@ -27,11 +27,7 @@ async function create (req, res){
             username,
             email,
             password: passwordHash
-        }).save();
-        setTimeout(function() {
-            //res.status(201).json('usuário criado')
-            res.redirect('/signin')
-        }, 2000);
+        }).save().then(res.redirect('/signin'));
     } catch(error){
         console.log('Erro ao criar usuário:' + error);
     }
