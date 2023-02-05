@@ -1,8 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const path = require('path')
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
 
 const postController = require('../controllers/postController')
 const commentController = require('../controllers/commentController')

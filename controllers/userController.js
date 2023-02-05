@@ -70,6 +70,8 @@ async function signin (req, res){
     )   
         const tokenBearer = `Bearer ${token}`;
 
+        req.session.user = user;
+
         res.cookie('access_token', tokenBearer, { maxAge: 3600000 }); // 1h
         res.set('Authorization', tokenBearer);
         res.redirect('/');
@@ -80,7 +82,7 @@ async function signin (req, res){
 }
 
 async function signout(req, res){
-    //req.session.destroy();
+    req.session.destroy();
   
     res.clearCookie('access_token');
     res.redirect('/');
@@ -96,12 +98,12 @@ async function isAuthenticated (req, res, next){
   
         return next();
       } catch (e) {
-        //req.session.user = null; // session's over
+        req.session.user = null; // session's over
         //req.flash('info', msg);
         return res.redirect('/signin');
       }
     } else {
-      //req.session.user = null; // session's over
+      req.session.user = null; // session's over
       //req.flash('info', msg);
       return res.redirect('/signin');
     }
