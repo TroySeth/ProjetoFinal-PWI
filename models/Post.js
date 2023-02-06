@@ -1,18 +1,16 @@
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
-const date = new Date();
+const hoje = new Date();
+const dataAtual = hoje.toLocaleDateString();;
+const horario = hoje.toLocaleTimeString();
 
 // Definindo o model das notas
 const postSchema = mongoose.Schema({
     title: String,
     content: String,
     author: String,
-    date: {type: Date, default: date},
+    date: {type: String, default: dataAtual + " às " + horario}
 });
-
-/*noteSchema.index(
-    { title: 'text', content: 'text'}, { weights: { title: 2, content: 1}}
-)*/
 
 // Definindo a collection
 const post = mongoose.model('post', postSchema);
