@@ -83,7 +83,7 @@ async function signin (req, res){
 
 async function signout(req, res){
     req.session.destroy();
-  
+   
     res.clearCookie('access_token');
     res.redirect('/');
 };
@@ -103,7 +103,7 @@ async function isAuthenticated (req, res, next){
         return res.redirect('/signin');
       }
     } else {
-      //req.session.user = null; // session's over
+      req.session.user = null; // session's over
       //req.flash('info', msg);
       return res.redirect('/signin');
     }
