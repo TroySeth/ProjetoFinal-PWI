@@ -10,6 +10,9 @@ html{
     background-color: white;
     color: white;
 }
+#textarea{
+    resize: none;
+}
 
 a{
     color: rgb(255, 123, 0);
@@ -403,4 +406,3 @@ header .navbar{
     font-size: 18px;
     
 }
-
