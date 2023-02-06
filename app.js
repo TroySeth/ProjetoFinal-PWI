@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
 const db = require('./db/db');
-const cookieParser = require('cookie-parser')
-
+const cookieParser = require('cookie-parser');
+const {handlebars, engine} = require('express-handlebars');
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json())
+app.use(express.json());
 app.use(express.static(__dirname));
-app.use(cookieParser())
-app.use(
+app.use(cookieParser());
+/*app.use(
     session({
         store: MongoStore.create({ mongoDBurl: `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_NAME}.${DB_CODE}.mongodb.net/?retryWrites=true&w=majority`}),
         secret: process.env.SECRET,
@@ -17,11 +17,17 @@ app.use(
         saveUninitialized: true,
         cookie: {  maxAge : 7  *  24  *  60  *  60  *  1000  } 
     })
-)
+);*/
 
+// Database connection
 db.Connect();
 
-const routes = require('./routes/routes')
+// Handlebars
+app.engine('handlebars', engine({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+// Using routes
+const routes = require('./routes/routes');
 app.use(routes);
 
 

@@ -103,7 +103,7 @@ async function isAuthenticated (req, res, next){
         return res.redirect('/signin');
       }
     } else {
-      req.session.user = null; // session's over
+      //req.session.user = null; // session's over
       //req.flash('info', msg);
       return res.redirect('/signin');
     }
