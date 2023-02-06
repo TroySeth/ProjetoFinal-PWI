@@ -5,6 +5,7 @@ const date = new Date();
 // Definindo o model dos comentários
 const commentSchema = mongoose.Schema({
     content: String,
+    author: String,
     date: {type: Date, default: date},
 });
 

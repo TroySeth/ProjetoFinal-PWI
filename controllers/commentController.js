@@ -6,7 +6,8 @@ async function create (req, res){
     try{
         new commentModel({
             content: req.body.content,
-            date: commentModel.date,
+            author: req.session.user.username,
+            date: commentModel.date
         }).save().then(res.status(201).json('comment criado'));
     } catch(error){
         console.log('Erro ao criar comnetário:' + error);

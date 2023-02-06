@@ -7,8 +7,9 @@ async function create (req, res){
         new postModel({
             title: req.body.title,
             content: req.body.content,
-            date: postModel.date,
-        }).save().then(res.status(201).json('subject criado'));
+            author: req.session.user.username,
+            date: postModel.date
+        }).save().then(res.redirect('/'));
     } catch(error){
         console.log('Erro ao criar assunto:' + error);
     }

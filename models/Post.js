@@ -6,6 +6,7 @@ const date = new Date();
 const postSchema = mongoose.Schema({
     title: String,
     content: String,
+    author: String,
     date: {type: Date, default: date},
 });
 
