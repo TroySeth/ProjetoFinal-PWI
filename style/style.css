@@ -358,12 +358,7 @@ header .navbar{
     height: 420px;
     background-color: rgb(6, 42, 80);
     border-radius: 20px;
-    position:absolute;
-    margin-top: 40px;
-	left:35%;
-    top:10%;
     display: grid;
-    align-items:start;
     justify-content: center;
 }
 
