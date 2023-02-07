@@ -1,4 +1,5 @@
 const {post: postModel, post} = require('../models/Post');
+const {user: userModel, user} = require('../models/User');
 const db = require('../db/db')
 
 // Função de criar assunto
@@ -9,7 +10,10 @@ async function create (req, res){
             content: req.body.content,
             author: req.session.user.username,
             date: postModel.date
-        }).save().then(res.redirect('/'));
+        }).save().then(async function (){
+            await userModel.updateOne({_id: req.session.user._id},{point: req.session.user.point += 10})
+            res.redirect('/')
+        })
     } catch(error){
         console.log('Erro ao criar assunto:' + error);
     }

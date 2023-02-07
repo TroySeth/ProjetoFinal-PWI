@@ -39,7 +39,7 @@ async function create (req, res){
             username,
             email,
             password: passwordHash,
-            marker: marker,
+            point: 0
         }).save().then(res.redirect('/signin'));
     } catch(error){
         console.log('Erro ao criar usuário:' + error);
