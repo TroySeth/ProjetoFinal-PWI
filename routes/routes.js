@@ -26,6 +26,21 @@ router.post('/register', userController.create);
 router.get('/signin', (req, res) => res.render('partials/login/initialLogin',{layout:'login'}));
 router.post('/signin', userController.signin);
 router.get('/signout', userController.signout);
-router.get('/profile', userController.isAuthenticated, (req, res) => res.render('partials/profile',{layout:'profile'}));
+router.get('/profile', userController.isAuthenticated, (req, res) => res.sendFile(path.join(__dirname, '../source', 'perfil.html')));
+router.get('/userinfo', userController.isAuthenticated, async (req, res) => {
+    try{
+        const user = {
+            username:  req.session.user.username,
+            nome:  req.session.user.name,
+            pontos:  req.session.user.point,
+            email:  req.session.user.email,
+        }
+        res.json(user);
+    }catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+
+    
+})
 
 module.exports = router;
