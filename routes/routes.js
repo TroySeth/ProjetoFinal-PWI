@@ -8,7 +8,7 @@ const userController = require('../controllers/userController');
 
 // Routes do post
 router.get('/', postController.findAll);
-router.get('/post', userController.isAuthenticated, (req, res) => res.render('partials/post'));
+router.get('/post', userController.isAuthenticated, (req, res) => res.render('partials/post/initialPost'));
 router.post('/post', userController.isAuthenticated, postController.create);
 router.put('/update', postController.editPost);
 router.delete('/delete', postController.destroyPost);
@@ -21,9 +21,9 @@ router.delete('/deleteComment', commentController.destroyComment);
 
 
 // Routes do user
-router.get('/register', (req, res) => res.render('partials/register'));
+router.get('/register', (req, res) => res.render('partials/register/initialRegister'));
 router.post('/register', userController.create);
-router.get('/signin', (req, res) => res.render('partials/login'));
+router.get('/signin', (req, res) => res.render('partials/login/initialLogin'));
 router.post('/signin', userController.signin);
 router.get('/signout', userController.signout);
 router.get('/profile', userController.isAuthenticated, (req, res) => res.render('partials/profile'));

@@ -18,7 +18,7 @@ async function create (req, res){
 // Função de pegar todos os assuntos do fórum no banco
 async function findAll (req, res){
     const postAll = await postModel.find().lean();
-    res.render('partials/initial', {Post: postAll});
+    res.render('partials/main/initial', {Post: postAll});
 };
 
 async function editPost (req, res){

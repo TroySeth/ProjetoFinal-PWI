@@ -27,6 +27,9 @@ db.Connect();
 
 // Handlebars
 app.engine('handlebars', engine({defaultLayout: 'main'}));
+app.engine('handlebars', engine({defaultLayout: 'post'}));
+app.engine('handlebars', engine({defaultLayout: 'login'}));
+app.engine('handlebars', engine({defaultLayout: 'register'}));
 app.set('view engine', 'handlebars');
 
 // Using routes
