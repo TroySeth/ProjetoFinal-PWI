@@ -5,8 +5,14 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session')
 const MongoStore = require('connect-mongo');
 const {handlebars, engine} = require('express-handlebars');
+require('dotenv').config();
 
-const mongoDBurl = 'mongodb+srv://leonardo:VuvQtFQXwvPnk90W@cluster0.fcutvj8.mongodb.net/?retryWrites=true&w=majority'
+const DB_USER = process.env.DB_USER;
+const DB_PASSWORD = process.env.DB_PASSWORD;
+const DB_NAME = process.env.DB_NAME;
+const DB_CODE = process.env.DB_CODE;
+
+const mongoDBurl = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_NAME}.${DB_CODE}.mongodb.net/?retryWrites=true&w=majority`
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(__dirname));
