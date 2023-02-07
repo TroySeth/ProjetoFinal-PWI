@@ -1,15 +1,15 @@
 <main class="form-signin w-100 m-auto">
-  <form>
+  <form action="/signin" method="POST">
     <p class="login-icon">iforum</p>
     <h1 class="h3 mb-3 fw-normal">Entrar</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput"
+      <input type="text" name="username" class="form-control" id="floatingInput"
         placeholder="name@exemplo.com" required>
-      <label for="floatingInput">Email</label>
+      <label for="floatingInput">Username</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword"
+      <input type="password" name="password" class="form-control" id="floatingPassword"
         placeholder="Password" required>
       <label for="floatingPassword">Senha</label>
     </div>

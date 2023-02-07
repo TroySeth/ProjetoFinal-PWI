@@ -1,5 +1,5 @@
 <main class="form-signin w-100 m-auto">
-    <form>
+    <form action="/register" method="POST">
         <p class="login-icon">iforum</p>
         <div class="modal modal-signin position-static d-block bg-secondary
             py-5" tabindex="-1" role="dialog" id="modalSignin">
@@ -15,19 +15,25 @@
                     <div class="modal-body p-5 pt-0">
                         <form class="form-register">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control
+                                <input type="text" name="name" class="form-control
                                     rounded-3" id="" placeholder="Nome"
                                     required>
                                 <label for="floatingInput">Nome</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control
+                                <input type="text" name="username" class="form-control
+                                    rounded-3" id="floatingInput"
+                                    placeholder="nome@example.com" required>
+                                <label for="floatingInput">Username</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" name="email" class="form-control
                                     rounded-3" id="floatingInput"
                                     placeholder="nome@example.com" required>
                                 <label for="floatingInput">Email</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control
+                                <input type="password" name="password" class="form-control
                                     rounded-3" id="floatingPassword"
                                     placeholder="Senha" required>
                                 <label for="floatingPassword">Password</label>
