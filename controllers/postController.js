@@ -11,8 +11,8 @@ async function create (req, res){
             author: req.session.user.username,
             date: postModel.date
         }).save().then(async function (){
-            await userModel.updateOne({_id: req.session.user._id},{point: req.session.user.point += 10})
-            res.redirect('/')
+            await userModel.updateOne({_id: req.session.user._id},{point: req.session.user.point += 10});
+            res.redirect('/');
         })
     } catch(error){
         console.log('Erro ao criar assunto:' + error);
@@ -36,6 +36,10 @@ async function editPost (req, res){
 
 async function destroyPost (req, res){
     await postModel.deleteOne({_id: req.body.id}).then(res.status(200).json('post do ID: ' + req.body.id + ' foi deletado')
+    .then(async function (){
+        await userModel.updateOne({_id: req.session.user._id},{point: req.session.user.point -= 10});
+        res.redirect('/profile');
+    })
     ).catch((error) => {
         console.log('Erro ao deletar a postagem.' + error);
     })
