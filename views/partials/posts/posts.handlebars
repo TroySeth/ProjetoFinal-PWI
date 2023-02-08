@@ -1,3 +1,4 @@
+{{#each Posts}}
 <div class="container m-auto mt-5">
     <div class="subforum">
         <div class="title text-light bg-dark">
@@ -9,16 +10,19 @@
             <i class="fa fa-car"></i>
         </div>
         <div class="subforum-description subforum-column text-light bg-dark">
-            <h1><a href="">Description tittle</a></h1>
-            <p>Description content</p>
+            <h1><a href="">{{title}}</a></h1>
+            <p>{{content}}</p>
         </div>
         <div class="status subforum-column text-light bg-dark">
             <span>24 post | 13 topics</span>
         </div>
         <div class="subforum-info subforum-column text-light bg-dark">
-            <b><a href="">Last Post</a> by <a href=""> Danielzin</a></b>
+            <b><a href="">Last Post</a> by <a href="">{{author}}</a></b>
             <br>
-            on 31/01/2023
+            {{date}}
         </div>
     </div>
 </div>
+{{else}}
+
+{{/each}}
