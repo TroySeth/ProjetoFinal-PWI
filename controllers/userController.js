@@ -112,8 +112,8 @@ async function renderProfile (req, res){
 async function verificarUsuario (req, res){
     const { access_token } = req.cookies;
     if(access_token){
-        const username = true;
-        res.render('partials/main/initial',{layout:'main', user: username});
+        const on = true;
+        res.render('partials/main/initial',{layout:'main', user: on, username: req.session.user.username});
     } else{
         res.render('partials/main/initial',{layout:'main'});
     }
