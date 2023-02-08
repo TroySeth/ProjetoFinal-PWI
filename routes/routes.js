@@ -9,6 +9,7 @@ const userController = require('../controllers/userController');
 // Routes do post
 router.get('/', postController.findAll);
 router.get('/post', userController.isAuthenticated, (req, res) => res.render('partials/post/initialPost',{layout:'post'}));
+router.get('/posts', userController.isAuthenticated, (req, res) => res.render('partials/posts/initialPosts',{layout:'posts'}));
 router.post('/post', userController.isAuthenticated, postController.create);
 router.put('/update', postController.editPost);
 router.delete('/delete', postController.destroyPost);
