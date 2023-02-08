@@ -115,7 +115,7 @@ async function renderProfile (req, res){
         const nome = req.session.user.name;
         const pontos = req.session.user.point;
         const email = req.session.user.email;
-        res.render('partials/profile/initialProfile',({layout:'profile'},{username: username, nome: nome, pontos: pontos, email: email}));
+        res.render('partials/profile/initialProfile',({layout:'profile', username: username, nome: nome, pontos: pontos, email: email}));
     } catch(error) {
         res.status(500).json({ error: error.message });
     }
