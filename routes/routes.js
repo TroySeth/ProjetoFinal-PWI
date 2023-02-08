@@ -26,6 +26,6 @@ router.post('/register', userController.create);
 router.get('/signin', (req, res) => res.render('partials/login/initialLogin',{layout:'login'}));
 router.post('/signin', userController.signin);
 router.get('/signout', userController.signout);
-router.get('/profile', userController.isAuthenticated, (req, res) => res.render('partials/profile',{layout:'profile'}));
+router.get('/profile', userController.isAuthenticated, (req, res) => userController.renderProfile(req, res));
 
 module.exports = router;

@@ -108,4 +108,17 @@ async function isAuthenticated (req, res, next){
       return res.redirect('/signin');
     }
 };
-module.exports = {create, signin, signout, isAuthenticated}
+
+async function renderProfile (req, res){
+    try{
+        const username = req.session.user.username;
+        const nome = req.session.user.name;
+        const pontos = req.session.user.point;
+        const email = req.session.user.email;
+        res.render('partials/profile/initialProfile',({layout:'profile'},{username: username, nome: nome, pontos: pontos, email: email}));
+    } catch(error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+module.exports = {create, signin, signout, isAuthenticated, renderProfile}
