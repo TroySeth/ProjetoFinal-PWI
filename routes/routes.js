@@ -7,7 +7,7 @@ const commentController = require('../controllers/commentController');
 const userController = require('../controllers/userController');
 
 // Routes do post
-router.get('/', postController.findAll);
+router.get('/', (req, res) => res.render('partials/main/initial',{layout:'main'}));
 router.get('/post', userController.isAuthenticated, (req, res) => res.render('partials/post/initialPost',{layout:'post'}));
 router.get('/posts', userController.isAuthenticated, (req, res) => postController.findAll(req, res));
 router.post('/post', userController.isAuthenticated, postController.create);
