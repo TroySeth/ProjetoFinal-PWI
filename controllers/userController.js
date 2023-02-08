@@ -3,16 +3,6 @@ const db = require('../db/db')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
-// Making random marker
-async function getMarker(){
-    marker = Math.floor(Math.random() * 10000000000);
-    const markerExists = await userModel.findOne({marker: marker});
-    if(markerExists){
-        getMarker();
-    }
-    return marker;
-}
-
 // Função de criar user
 async function create (req, res){
     
