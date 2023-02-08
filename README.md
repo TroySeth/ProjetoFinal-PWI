@@ -1,6 +1,7 @@
 # **Programação Para Web I - Projeto Final**
 
 ## **Escopo**
+Projeto de uma aplicação web de um fórum que armazena dados no MongoDB.
 
 ## **Como iniciar**
 1. Faça a clonagem ou download desse repositório.
