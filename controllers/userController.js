@@ -18,8 +18,6 @@ async function create (req, res){
         return res.status(422).json('usuário já existe, tente outro usuário')
     }
 
-    getMarker();
-
     const salt = await bcrypt.genSalt(12)
     const passwordHash = await bcrypt.hash(password, salt)
 
