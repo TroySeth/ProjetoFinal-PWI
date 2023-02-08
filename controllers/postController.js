@@ -21,8 +21,15 @@ async function create (req, res){
 
 // Função de pegar todos os assuntos do fórum no banco
 async function findAll (req, res){
-    const postAll = await postModel.find().lean();
-    res.render('partials/posts/initialPosts', ({layout:'posts', Posts: postAll}));
+    const { access_token } = req.cookies;
+    if(access_token){
+        const postAll = await postModel.find().lean();
+        const user = true;
+        res.render('partials/posts/initialPosts', ({layout:'posts', user: user, username: req.session.user.username, Posts: postAll}));
+    } else{
+        const postAll = await postModel.find().lean();
+        res.render('partials/posts/initialPosts', ({layout:'posts', Posts: postAll}));
+    }
 };
 
 async function editPost (req, res){

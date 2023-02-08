@@ -1,4 +1,33 @@
+{{#if user}}
 <!-- Nav bar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand btn btn-secondary btn-lg active" href="#">iforum</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="navbar-items">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <a href="/profile"><button type="button" class="btn
+                        btn-outline-primary me-2 border-0 active" onclickhref="/register">Olá <strong>{{username}}</strong></button></a>
+                <a href="/signout"><button
+                        type="button" class="btn btn-outline-light me-2" onclick
+                        href="entrar.html">Sair</button></a>
+            </form>
+        </div>
+    </div>
+</nav>
+<!-- Use Container or Grid -->
+{{else}}
+    <!-- Nav bar -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
         <a class="navbar-brand btn btn-secondary btn-lg active" href="#">iforum</a>
@@ -23,3 +52,4 @@
     </div>
 </nav>
 <!-- Use Container or Grid -->
+{{/if}}
