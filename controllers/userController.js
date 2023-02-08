@@ -109,4 +109,14 @@ async function renderProfile (req, res){
     }
 }
 
-module.exports = {create, signin, signout, isAuthenticated, renderProfile}
+async function verificarUsuario (req, res){
+    const { access_token } = req.cookies;
+    if(access_token){
+        const username = true;
+        res.render('partials/main/initial',{layout:'main', user: username});
+    } else{
+        res.render('partials/main/initial',{layout:'main'});
+    }
+}
+
+module.exports = {create, signin, signout, isAuthenticated, renderProfile, verificarUsuario}
