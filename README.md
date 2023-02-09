@@ -18,5 +18,5 @@ Projeto de uma aplicação web de um fórum que armazena dados no MongoDB.
 4. Digite ``npm start`` no terminal.
 5. Inicie a aplicação na url ``localhost:3000`` no navegador.
 
-## **Quem são os envolvidos**
+## **Quem são os Desenvolvedores**
 [``Daniel Athur``](https://github.com/dxArtur) | [``Guilherme Costa``](https://github.com/TroySeth) | [``José Igor``](https://github.com/Jose-Igor) | [``Leonardo Mendes``](https://github.com/leomendes18) | [``Ramon Oliveira``](https://github.com/raszz) 
